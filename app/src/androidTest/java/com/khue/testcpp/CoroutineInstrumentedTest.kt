@@ -2,6 +2,7 @@ package com.khue.testcpp
 
 import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.ext.junit.runners.AndroidJUnit4
+import com.khue.testcpp.coroutine.TestCoroutineRepository
 
 import org.junit.Test
 import org.junit.runner.RunWith
@@ -14,7 +15,8 @@ import org.junit.Assert.*
  * See [testing documentation](http://d.android.com/tools/testing).
  */
 @RunWith(AndroidJUnit4::class)
-class ExampleInstrumentedTest {
+class CoroutineInstrumentedTest {
+
     @Test
     fun useAppContext() {
         // Context of the app under test.

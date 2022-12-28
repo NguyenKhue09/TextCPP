@@ -1,9 +1,10 @@
-package com.khue.testcpp
+package com.khue.testcpp.coroutine
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import androidx.lifecycle.lifecycleScope
+import com.khue.testcpp.R
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
@@ -18,10 +19,9 @@ class TestCoroutineActivity : AppCompatActivity() {
         }
 
         lifecycleScope.launch(Dispatchers.IO) {
-//            testCoroutine.getY().await().also {
-//                Log.i("TestCoroutine", "get success y in activit: $it")
-//            }
-            testCoroutine.getI()
+            testCoroutine.getY().await().also {
+                Log.i("TestCoroutine", "get success y in activit: $it, replay cache: ${testCoroutine.y.replayCache}")
+            }
         }
     }
 }
